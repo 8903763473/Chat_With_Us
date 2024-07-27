@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PushNotificationService } from '../Services/pushNotification.service';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  constructor() {}
+  constructor(public Push: PushNotificationService) { }
 
 }
