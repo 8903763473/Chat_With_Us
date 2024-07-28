@@ -1,0 +1,14 @@
+ng-otp-input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    overflow: scroll !important;
+}
+
+::-webkit-scrollbar {
+    width: 0 !important;
+}

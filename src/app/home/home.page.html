@@ -51,10 +51,10 @@
                         <img src="assets/images/users/avatar-1.jpg" alt="" class="profile-user rounded-circle">
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Profile <i class="ri-profile-line float-end text-muted"></i></a>
-                        <a class="dropdown-item" href="#">Setting <i class="ri-settings-3-line float-end text-muted"></i></a>
+                        <a class="dropdown-item">Profile <i class="ri-profile-line float-end text-muted"></i></a>
+                        <a class="dropdown-item">Setting <i class="ri-settings-3-line float-end text-muted"></i></a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Log out <i class="ri-logout-circle-r-line float-end text-muted"></i></a>
+                        <a class="dropdown-item pointer" (click)="doLogout($event)">Log out <i class="ri-logout-circle-r-line float-end text-muted"></i></a>
                     </div>
                 </li>
             </ul>
@@ -74,10 +74,10 @@
                         <img src="assets/images/users/avatar-1.jpg" alt="" class="profile-user rounded-circle">
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Profile <i class="ri-profile-line float-end text-muted"></i></a>
-                        <a class="dropdown-item" href="#">Setting <i class="ri-settings-3-line float-end text-muted"></i></a>
+                        <a class="dropdown-item">Profile <i class="ri-profile-line float-end text-muted"></i></a>
+                        <a class="dropdown-item">Setting <i class="ri-settings-3-line float-end text-muted"></i></a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="auth-login.html">Log out <i class="ri-logout-circle-r-line float-end text-muted"></i></a>
+                        <a class="dropdown-item pointer" (click)="doLogout($event)">Log out <i class="ri-logout-circle-r-line float-end text-muted"></i></a>
                     </div>
                 </li>
             </ul>

@@ -12,4 +12,9 @@ export class AppComponent {
       this.router.navigate(['/Login']);
     }
   }
+
+  navigate(data: any) {
+    this.router.navigate(['/' + data]);
+  }
+
 }

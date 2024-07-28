@@ -11,7 +11,7 @@ export class ApiService {
     constructor(private firebaseX: FirebaseX, private http: HttpClient, private push: Push,
         private platform: Platform) { }
 
-    public baseUrl = "http://192.168.59.171:8589/api";
+    public baseUrl = "http://192.168.37.171:5000/api";
 
 
     Login(data: any) {
@@ -24,6 +24,10 @@ export class ApiService {
 
     GetOtp(deviceToken: any) {
         return this.http.post(this.baseUrl + '/auth/getOtp', deviceToken);
+    }
+
+    verifyOTP(data:any){        
+        return this.http.post(this.baseUrl + '/auth/verify-otp', data);
     }
 
 }

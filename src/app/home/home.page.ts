@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PushNotificationService } from '../Services/pushNotification.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,12 @@ import { PushNotificationService } from '../Services/pushNotification.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  constructor(public Push: PushNotificationService) { }
+  constructor(public router: Router) { }
+
+  doLogout(event: any) {
+    event.preventDefault();
+    localStorage.clear();
+    this.router.navigate(['/Login']);
+  }
 
 }

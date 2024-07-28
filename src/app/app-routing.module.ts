@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RecoveryComponent } from './recovery/recovery.component';
 import { CommunicateComponent } from './communicate/communicate.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path: 'Communicate',
     component: CommunicateComponent
+  },
+  {
+    path: 'Contact',
+    component: ContactsComponent
   },
 ];
 

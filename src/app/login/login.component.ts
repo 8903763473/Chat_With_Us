@@ -3,6 +3,7 @@ import { PushNotificationService } from '../Services/pushNotification.service';
 import { Router } from '@angular/router';
 import { ApiService } from '../Services/api.service';
 import { AlertController } from '@ionic/angular';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-login',
@@ -11,14 +12,15 @@ import { AlertController } from '@ionic/angular';
 })
 export class LoginComponent implements OnInit {
 
-  showTotst: boolean = false;
+  onLogin: boolean = false;
+  EnteredOTP: any
 
-  constructor(public Pushotification: PushNotificationService, private alertController: AlertController, public router: Router, public api: ApiService) { }
+  constructor(public Pushotification: PushNotificationService, public app: AppComponent, private alertController: AlertController, public router: Router, public api: ApiService) { }
 
   ngOnInit() {
-    this.showTotst = false
-    if (localStorage.getItem('login') != 'true') {
-      this.router.navigate(['/Login']);
+    this.onLogin = true;
+    if (localStorage.getItem('login') == 'true') {
+      this.router.navigate(['/home']);
     }
   }
 
@@ -28,15 +30,18 @@ export class LoginComponent implements OnInit {
     const Password: any = document.getElementById('Password');
     let post = {
       "email": Email.value,
-      "password": Password
+      "password": Password.value
     }
     if (post.email && post.password) {
       this.api.Login(post).subscribe({
         next: ((res: any) => {
           console.log(res);
           localStorage.setItem('login', 'true');
-          localStorage.setItem('token', res?.token);
-          this.presentAlert();
+          localStorage.setItem('token', res?.UserData?.token?.Token);
+          localStorage.setItem('userId', res?.UserData?.user?._id);
+
+          this.onLogin = false;
+          this.Pushotification.getToken();
         }), error: (err => {
           console.log(err);
         })
@@ -44,14 +49,42 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  doVerify() {
+    if (this.EnteredOTP.length == 4) {
+      let post = {
+        otp: this.EnteredOTP,
+        userId: localStorage.getItem('userId')
+      }
+      this.api.verifyOTP(post).subscribe({
+        next: (res => {
+          console.log(res);
+          this.presentAlert();
+        }), error: (err => {
+          console.log(err);
+        })
+      })
+    } else {
+      alert('OTP length should not be less than four !')
+    }
+  }
+
+  onOtpChange(event: any) {
+    this.EnteredOTP = event;
+  }
+
   async presentAlert() {
     const alert = await this.alertController.create({
-      header: 'Alert',
-      subHeader: 'Subtitle',
-      message: 'This is an alert message.',
-      buttons: ['OK']
+      header: 'Success',
+      // subHeader: 'Subtitle',
+      message: 'Verified Successfully',
+      buttons: [{
+        text: "let's go",
+        handler: () => {
+          this.router.navigate(['/home']);
+        }
+      }],
+      backdropDismiss: false
     });
-
     await alert.present();
   }
 

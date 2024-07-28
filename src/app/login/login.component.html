@@ -9,22 +9,24 @@
                           <img src="assets/images/logo-light.png" alt="" height="30" class="logo logo-light">
                       </a>
 
-                      <h4>Sign in</h4>
-                      <p class="text-muted mb-4">Sign in to continue to Chatvia.</p>                      
+                      <h4 *ngIf="onLogin">Sign in</h4>
+                      <h4 *ngIf="!onLogin">Verify OTP</h4>
+                      <p class="text-muted mb-4" *ngIf="onLogin">Sign in to continue to Chatvia.</p>   
+                      <p class="text-muted mb-4" *ngIf="!onLogin">Please enter the one-time password
+                          to verify your account</p>                    
                   </div>
 
                   <div class="card">
                       <div class="card-body p-4">
                           <div class="p-3">
-                              <form action="https://themesbrand.com/chatvia/layouts/index.html">
-
+                              <form *ngIf="onLogin">
                                   <div class="mb-3">
                                       <label class="form-label">Email</label>
                                       <div class="input-group mb-3 bg-light-subtle rounded-3">
                                           <span class="input-group-text text-muted" id="basic-addon3">
                                             <i class="bi bi-envelope-arrow-down"></i>
                                           </span>
-                                          <input id="Email" value="" type="text" class="form-control form-control-lg border-light bg-light-subtle" placeholder="Enter Email" aria-label="Enter Username" aria-describedby="basic-addon3">
+                                          <input id="Email" value="" type="text" class="form-control form-control-lg border-light bg-light-subtle" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="basic-addon3">
                                       </div>
                                   </div>
 
@@ -53,10 +55,24 @@
 
                                   </div>
 
-                              </form>
+                          </form>
+                          <form *ngIf="!onLogin">
+                             <p class="text-muted mb-4 text-center" *ngIf="!onLogin">A code has been sent to your Mobile</p> 
+                            <ng-otp-input  (onInputChange)="onOtpChange($event)"  [config]="{length:4}"></ng-otp-input><br><br>
+                            <div class="d-grid">
+                                <button class="btn btn-primary waves-effect waves-light" (click)="doVerify()">Verify OTP</button>
+                            </div>
+                          </form>
+
                           </div>
                       </div>
                   </div>
+
+                  <div class="mt-5 text-center">
+                    <p>Don't have an account ? <a class="fw-medium text-primary pointer" (click)="app.navigate('Register')"> SignUp </a> </p>
+                    <!-- <p>© <script>document.write(new Date().getFullYear())</script> Chatvia. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</p> -->
+                </div>
+
               </div>
           </div>
       </div>

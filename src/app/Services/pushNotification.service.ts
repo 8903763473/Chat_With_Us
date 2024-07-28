@@ -14,7 +14,6 @@ export class PushNotificationService {
 
     async getToken() {
         console.log('Called');
-
         if (this.platform.IOS) {
             const options: PushOptions = {
                 ios: {
@@ -42,13 +41,14 @@ export class PushNotificationService {
             // const TOKEN = 'fTKdUKajSCq039AqkXQcNN:APA91bEH3AnQfNl6stXOvXvA69KAjawV2UKZOeWFSNnYHcwqyX3mFI31yKynRUlXvudMGRGv1t58HUyfPXMpvXa8AiUrmNdu21_hnDiIPP1c65K6clrKGBNpVi15X9ODU12M9456ENHw'
             this.sendTokenToServer(token);
         }
-        // const TOKEN = 'fTKdUKajSCq039AqkXQcNN:APA91bEH3AnQfNl6stXOvXvA69KAjawV2UKZOeWFSNnYHcwqyX3mFI31yKynRUlXvudMGRGv1t58HUyfPXMpvXa8AiUrmNdu21_hnDiIPP1c65K6clrKGBNpVi15X9ODU12M9456ENHw'
-        // this.sendTokenToServer(TOKEN);
-
+        const TOKEN = 'fTKdUKajSCq039AqkXQcNN:APA91bEH3AnQfNl6stXOvXvA69KAjawV2UKZOeWFSNnYHcwqyX3mFI31yKynRUlXvudMGRGv1t58HUyfPXMpvXa8AiUrmNdu21_hnDiIPP1c65K6clrKGBNpVi15X9ODU12M9456ENHw'
+        this.sendTokenToServer(TOKEN);
     }
 
     sendTokenToServer(deviceToken: any) {
+        const UserId = localStorage.getItem('userId');
         let post = {
+            userId: UserId,
             token: deviceToken
         }
         this.api.GetOtp(post).subscribe({
