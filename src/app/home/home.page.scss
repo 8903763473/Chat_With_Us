@@ -1,0 +1,7 @@
+.fade {
+    transition: opacity .15s linear !important;
+}
+
+.modal-backdrop.show {
+    display: none !important;
+}

@@ -15,6 +15,7 @@ import { NgOtpInputModule } from 'ng-otp-input';
 import { RegisterComponent } from './register/register.component';
 import { RecoveryComponent } from './recovery/recovery.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts/ngx';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ContactsComponent } from './contacts/contacts.component';
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     FirebaseX,
     Push,
+    Contacts,
     Platform, HttpClient
   ],
   bootstrap: [AppComponent],

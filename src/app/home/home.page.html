@@ -21,28 +21,28 @@
         <!-- Start side-menu nav -->
         <div class="flex-lg-column my-auto">
             <ul class="nav nav-pills side-menu-nav justify-content-center" role="tablist">
-                <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="top" title="Profile">
-                    <a class="nav-link" id="pills-user-tab" data-bs-toggle="pill" href="#pills-user" role="tab">
+                <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="top" title="Profile" (click)="onSelectMenu(1)">
+                    <a class="nav-link" id="pills-user-tab" data-bs-toggle="pill" role="tab">
                         <i class="ri-user-2-line"></i>
                     </a>
                 </li>
-                <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="top" title="Chats">
-                    <a class="nav-link active" id="pills-chat-tab" data-bs-toggle="pill" href="#pills-chat" role="tab">
+                <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="top" title="Chats" (click)="onSelectMenu(2)">
+                    <a class="nav-link active" id="pills-chat-tab" data-bs-toggle="pill" role="tab">
                         <i class="ri-message-3-line"></i>
                     </a>
                 </li>
-                <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="top" title="Groups">
-                    <a class="nav-link" id="pills-groups-tab" data-bs-toggle="pill" href="#pills-groups" role="tab">
+                <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="top" title="Groups" (click)="onSelectMenu(3)">
+                    <a class="nav-link" id="pills-groups-tab" data-bs-toggle="pill" role="tab">
                         <i class="ri-group-line"></i>
                     </a>
                 </li>
-                <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="top" title="Contacts">
-                    <a class="nav-link" id="pills-contacts-tab" data-bs-toggle="pill" href="#pills-contacts" role="tab">
+                <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="top" title="Contacts" (click)="onSelectMenu(4)">
+                    <a class="nav-link" id="pills-contacts-tab" data-bs-toggle="pill" role="tab">
                         <i class="ri-contacts-line"></i>
                     </a>
                 </li>
-                <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="top" title="Settings">
-                    <a class="nav-link" id="pills-setting-tab" data-bs-toggle="pill" href="#pills-setting" role="tab">
+                <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="top" title="Settings" (click)="onSelectMenu(5)">
+                    <a class="nav-link" id="pills-setting-tab" data-bs-toggle="pill" role="tab">
                         <i class="ri-settings-2-line"></i>
                     </a>
                 </li>
@@ -91,7 +91,7 @@
 
         <div class="tab-content">
             <!-- Start Profile tab-pane -->
-            <div class="tab-pane" id="pills-user" role="tabpanel" aria-labelledby="pills-user-tab">
+            <div class="tab-pane" id="pills-user" role="tabpanel" aria-labelledby="pills-user-tab" [class.active]="SelectedMenu==1" [class.show]="SelectedMenu==1" [class.fade]="SelectedMenu==1">
                 <!-- Start profile content -->
                 <div>
                     <div class="px-4 pt-4">
@@ -335,7 +335,7 @@
             <!-- End Profile tab-pane -->
 
             <!-- Start chats tab-pane -->
-            <div class="tab-pane fade show active" id="pills-chat" role="tabpanel" aria-labelledby="pills-chat-tab">
+            <div class="tab-pane" id="pills-chat" role="tabpanel" aria-labelledby="pills-chat-tab" [class.active]="SelectedMenu==2" [class.show]="SelectedMenu==2" [class.fade]="SelectedMenu==2">
                 <!-- Start chats content -->
                 <div>
                     <div class="px-4 pt-4">
@@ -640,7 +640,7 @@
             <!-- End chats tab-pane -->
             
             <!-- Start groups tab-pane -->
-            <div class="tab-pane" id="pills-groups" role="tabpanel" aria-labelledby="pills-groups-tab">
+            <div class="tab-pane" id="pills-groups" role="tabpanel" aria-labelledby="pills-groups-tab" [class.active]="SelectedMenu==3" [class.show]="SelectedMenu==3" [class.fade]="SelectedMenu==3">
                 <!-- Start Groups content -->
                 <div>
                     <div class="p-4">
@@ -707,154 +707,7 @@
                                                                     </ul>
                                                                 </div>
 
-                                                                <div>
-                                                                    <div class="p-3 fw-bold text-primary">
-                                                                        C
-                                                                    </div>
 
-                                                                    <ul class="list-unstyled contact-list">
-                                                                        <li>
-                                                                            <div class="form-check">
-                                                                                <input type="checkbox" class="form-check-input" id="memberCheck3">
-                                                                                <label class="form-check-label" for="memberCheck3">Craig Smiley</label>
-                                                                            </div>
-                                                                        </li>
-
-                                                                    </ul>
-                                                                </div>
-
-                                                                <div>
-                                                                    <div class="p-3 fw-bold text-primary">
-                                                                        D
-                                                                    </div>
-
-                                                                    <ul class="list-unstyled contact-list">
-                                                                        <li>
-                                                                            <div class="form-check">
-                                                                                <input type="checkbox" class="form-check-input" id="memberCheck4">
-                                                                                <label class="form-check-label" for="memberCheck4">Daniel Clay</label>
-                                                                            </div>
-                                                                        </li>
-
-                                                                    </ul>
-                                                                </div>
-
-                                                                <div>
-                                                                    <div class="p-3 fw-bold text-primary">
-                                                                        I
-                                                                    </div>
-
-                                                                    <ul class="list-unstyled contact-list">
-                                                                        <li>
-                                                                            <div class="form-check">
-                                                                                <input type="checkbox" class="form-check-input" id="memberCheck5">
-                                                                                <label class="form-check-label" for="memberCheck5">Iris Wells</label>
-                                                                            </div>
-                                                                        </li>
-
-                                                                    </ul>
-                                                                </div>
-
-                                                                <div>
-                                                                    <div class="p-3 fw-bold text-primary">
-                                                                        J
-                                                                    </div>
-
-                                                                    <ul class="list-unstyled contact-list">
-                                                                        <li>
-                                                                            <div class="form-check">
-                                                                                <input type="checkbox" class="form-check-input" id="memberCheck6">
-                                                                                <label class="form-check-label" for="memberCheck6">Juan Flakes</label>
-                                                                            </div>
-                                                                        </li>
-
-                                                                        <li>
-                                                                            <div class="form-check">
-                                                                                <input type="checkbox" class="form-check-input" id="memberCheck7">
-                                                                                <label class="form-check-label" for="memberCheck7">John Hall</label>
-                                                                            </div>
-                                                                        </li>
-
-                                                                        <li>
-                                                                            <div class="form-check">
-                                                                                <input type="checkbox" class="form-check-input" id="memberCheck8">
-                                                                                <label class="form-check-label" for="memberCheck8">Joy Southern</label>
-                                                                            </div>
-                                                                        </li>
-
-                                                                    </ul>
-                                                                </div>
-
-                                                                <div>
-                                                                    <div class="p-3 fw-bold text-primary">
-                                                                        M
-                                                                    </div>
-
-                                                                    <ul class="list-unstyled contact-list">
-                                                                        <li>
-                                                                            <div class="form-check">
-                                                                                <input type="checkbox" class="form-check-input" id="memberCheck9">
-                                                                                <label class="form-check-label" for="memberCheck9">Michael Hinton</label>
-                                                                            </div>
-                                                                        </li>
-
-                                                                        <li>
-                                                                            <div class="form-check">
-                                                                                <input type="checkbox" class="form-check-input" id="memberCheck10">
-                                                                                <label class="form-check-label" for="memberCheck10">Mary Farmer</label>
-                                                                            </div>
-                                                                        </li>
-
-                                                                    </ul>
-                                                                </div>
-
-                                                                <div>
-                                                                    <div class="p-3 fw-bold text-primary">
-                                                                        P
-                                                                    </div>
-
-                                                                    <ul class="list-unstyled contact-list">
-                                                                        <li>
-                                                                            <div class="form-check">
-                                                                                <input type="checkbox" class="form-check-input" id="memberCheck11">
-                                                                                <label class="form-check-label" for="memberCheck11">Phillis Griffin</label>
-                                                                            </div>
-                                                                        </li>
-
-                                                                    </ul>
-                                                                </div>
-
-                                                                <div>
-                                                                    <div class="p-3 fw-bold text-primary">
-                                                                        R
-                                                                    </div>
-
-                                                                    <ul class="list-unstyled contact-list">
-                                                                        <li>
-                                                                            <div class="form-check">
-                                                                                <input type="checkbox" class="form-check-input" id="memberCheck12">
-                                                                                <label class="form-check-label" for="memberCheck12">Rocky Jackson</label>
-                                                                            </div>
-                                                                        </li>
-
-                                                                    </ul>
-                                                                </div>
-
-                                                                <div>
-                                                                    <div class="p-3 fw-bold text-primary">
-                                                                        S
-                                                                    </div>
-
-                                                                    <ul class="list-unstyled contact-list">
-                                                                        <li>
-                                                                            <div class="form-check">
-                                                                                <input type="checkbox" class="form-check-input" id="memberCheck13">
-                                                                                <label class="form-check-label" for="memberCheck13">Simon Velez</label>
-                                                                            </div>
-                                                                        </li>
-
-                                                                    </ul>
-                                                                </div>
                                                             </div>
                                                         </div>
                                 
@@ -1002,14 +855,14 @@
             <!-- End groups tab-pane -->
 
             <!-- Start contacts tab-pane -->
-            <div class="tab-pane" id="pills-contacts" role="tabpanel" aria-labelledby="pills-contacts-tab">
+            <div class="tab-pane" id="pills-contacts" role="tabpanel" aria-labelledby="pills-contacts-tab" [class.active]="SelectedMenu==4" [class.show]="SelectedMenu==4" [class.fade]="SelectedMenu==4">
                 <!-- Start Contact content -->
                 <div>
                     <div class="p-4">
                         <div class="user-chat-nav float-end">
                             <div data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add Contact">
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-link text-decoration-none text-muted font-size-18 py-0" data-bs-toggle="modal" data-bs-target="#addContact-exampleModal">
+                                <button type="button" class="btn btn-link text-decoration-none text-muted font-size-18 py-0" data-bs-toggle="modal" (click)="inviteUser()">
                                     <i class="ri-user-add-line"></i>
                                 </button>
                             </div>
@@ -1017,7 +870,7 @@
                         <h4 class="mb-4">Contacts</h4>
 
                         <!-- Start Add contact Modal -->
-                        <div class="modal fade" id="addContact-exampleModal" tabindex="-1" role="dialog" aria-labelledby="addContact-exampleModalLabel" aria-hidden="true">
+                        <div class="" [class.modal]="InviteUser" [class.fade]="InviteUser" id="addContact-exampleModal" tabindex="-1" role="dialog" aria-hidden="true" *ngIf="InviteUser">
                             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -1063,447 +916,34 @@
                     <!-- Start contact lists -->
                     <div class="p-4 chat-message-list chat-group-list" data-simplebar>
 
-                        <div>
+                        <div *ngFor="let group of FirstLetters | keyvalue">
                             <div class="p-3 fw-bold text-primary">
-                                A
+                              {{ group.key }}
                             </div>
-
                             <ul class="list-unstyled contact-list">
-                                <li>
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-grow-1">
-                                            <h5 class="font-size-14 m-0">Albert Rodarte</h5>
-                                        </div>
-                                        <div class="dropdown">
-                                            <a href="#" class="text-muted dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="ri-more-2-fill"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Share <i class="ri-share-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Block <i class="ri-forbid-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Remove <i class="ri-delete-bin-line float-end text-muted"></i></a>
-                                            </div>
-                                        </div>
+                              <li *ngFor="let contact of group.value">
+                                <div class="d-flex align-items-center">
+                                  <div class="flex-grow-1">
+                                    <h5 class="font-size-14 m-0">{{ contact.name }}</h5>
+                                  </div>
+                                  <div class="dropdown">
+                                    <a class="text-muted dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <i class="ri-more-2-fill"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-end">
+                                      <a class="dropdown-item">Share <i class="ri-share-line float-end text-muted"></i></a>
+                                      <a class="dropdown-item">Block <i class="ri-forbid-line float-end text-muted"></i></a>
+                                      <a class="dropdown-item">Remove <i class="ri-delete-bin-line float-end text-muted"></i></a>
                                     </div>
-                                </li>
-
-                                <li>
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-grow-1">
-                                            <h5 class="font-size-14 m-0">Allison Etter</h5>                        
-                                        </div>
-                                        <div class="dropdown">
-                                            <a href="#" class="text-muted dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="ri-more-2-fill"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Share <i class="ri-share-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Block <i class="ri-forbid-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Remove <i class="ri-delete-bin-line float-end text-muted"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+                                  </div>
+                                </div>
+                              </li>
                             </ul>
-                        </div>
+                          </div>
+                          
                         <!-- end contact list A -->
 
-                        <div class="mt-3">
-                            <div class="p-3 fw-bold text-primary">
-                                C
-                            </div>
-
-                            <ul class="list-unstyled contact-list">
-                                <li>
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-grow-1">
-                                            <h5 class="font-size-14 m-0">Craig Smiley</h5>
-                                        </div>                        
-                                        <div class="dropdown">
-                                            <a href="#" class="text-muted dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="ri-more-2-fill"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Share <i class="ri-share-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Block <i class="ri-forbid-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Remove <i class="ri-delete-bin-line float-end text-muted"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- end contact list C -->
-
-                        <div class="mt-3">
-                            <div class="p-3 fw-bold text-primary">
-                                D
-                            </div>
-
-                            <ul class="list-unstyled contact-list">
-                                <li>
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-grow-1">
-                                            <h5 class="font-size-14 m-0">Daniel Clay</h5>  
-                                        </div>
-                                        <div class="dropdown">
-                                            <a href="#" class="text-muted dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="ri-more-2-fill"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Share <i class="ri-share-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Block <i class="ri-forbid-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Remove <i class="ri-delete-bin-line float-end text-muted"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-grow-1">
-                                            <h5 class="font-size-14 m-0">Doris Brown</h5>
-                                        </div>
-                
-                                        <div class="dropdown">
-                                            <a href="#" class="text-muted dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="ri-more-2-fill"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Share <i class="ri-share-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Block <i class="ri-forbid-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Remove <i class="ri-delete-bin-line float-end text-muted"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-
-                            </ul>
-                        </div>
-                        <!-- end contact list D -->
-
-                        <div class="mt-3">
-                            <div class="p-3 fw-bold text-primary">
-                                I
-                            </div>
-
-                            <ul class="list-unstyled contact-list">
-        
-                                <li>
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-grow-1">
-                                            <h5 class="font-size-14 m-0">Iris Wells</h5>
-                                        </div>                        
-                                        <div class="dropdown">
-                                            <a href="#" class="text-muted dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="ri-more-2-fill"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Share <i class="ri-share-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Block <i class="ri-forbid-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Remove <i class="ri-delete-bin-line float-end text-muted"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- end contact list I -->
-
-                        <div class="mt-3">
-                            <div class="p-3 fw-bold text-primary">
-                                J
-                            </div>
-
-                            <ul class="list-unstyled contact-list">
-                                <li>
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-grow-1">
-                                            <h5 class="font-size-14 m-0">Juan Flakes</h5>
-                                        </div>                        
-                                        <div class="dropdown">
-                                            <a href="#" class="text-muted dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="ri-more-2-fill"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Share <i class="ri-share-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Block <i class="ri-forbid-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Remove <i class="ri-delete-bin-line float-end text-muted"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-grow-1">
-                                            <h5 class="font-size-14 m-0">John Hall</h5>
-                                        </div>                                                
-                                        <div class="dropdown">
-                                            <a href="#" class="text-muted dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="ri-more-2-fill"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Share <i class="ri-share-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Block <i class="ri-forbid-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Remove <i class="ri-delete-bin-line float-end text-muted"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-grow-1">
-                                            <h5 class="font-size-14 m-0">Joy Southern</h5>
-                                        </div>                        
-                                        <div class="dropdown">
-                                            <a href="#" class="text-muted dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="ri-more-2-fill"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Share <i class="ri-share-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Block <i class="ri-forbid-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Remove <i class="ri-delete-bin-line float-end text-muted"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- end contact list J -->
-
-                        <div class="mt-3">
-                            <div class="p-3 fw-bold text-primary">
-                                M
-                            </div>
-
-                            <ul class="list-unstyled contact-list">
-                                <li>
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-grow-1">
-                                            <h5 class="font-size-14 m-0">Mary Farmer</h5>
-                                        </div>                        
-                                        <div class="dropdown">
-                                            <a href="#" class="text-muted dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="ri-more-2-fill"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Share <i class="ri-share-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Block <i class="ri-forbid-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Remove <i class="ri-delete-bin-line float-end text-muted"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-grow-1">
-                                            <h5 class="font-size-14 m-0">Mark Messer</h5>
-                                        </div>                        
-                                        <div class="dropdown">
-                                            <a href="#" class="text-muted dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="ri-more-2-fill"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Share <i class="ri-share-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Block <i class="ri-forbid-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Remove <i class="ri-delete-bin-line float-end text-muted"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-grow-1">
-                                            <h5 class="font-size-14 m-0">Michael Hinton</h5>
-                                        </div>
-                
-                                        <div class="dropdown">
-                                            <a href="#" class="text-muted dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="ri-more-2-fill"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Share <i class="ri-share-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Block <i class="ri-forbid-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Remove <i class="ri-delete-bin-line float-end text-muted"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-
-                            </ul>
-                        </div>
-                        <!-- end contact list M -->
-
-                        <div class="mt-3">
-                            <div class="p-3 fw-bold text-primary">
-                                O
-                            </div>
-
-                            <ul class="list-unstyled contact-list">
-                                <li>
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-grow-1">
-                                            <h5 class="font-size-14 m-0">Ossie Wilson</h5>
-                                        </div>                        
-                                        <div class="dropdown">
-                                            <a href="#" class="text-muted dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="ri-more-2-fill"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Share <i class="ri-share-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Block <i class="ri-forbid-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Remove <i class="ri-delete-bin-line float-end text-muted"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-
-                            </ul>
-                        </div>
-                        <!-- end contact list O -->
-
-                        <div class="mt-3">
-                            <div class="p-3 fw-bold text-primary">
-                                P
-                            </div>
-
-                            <ul class="list-unstyled contact-list">
-                                <li>
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-grow-1">
-                                            <h5 class="font-size-14 m-0">Phillis Griffin</h5>
-                                        </div>
-                
-                                        <div class="dropdown">
-                                            <a href="#" class="text-muted dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="ri-more-2-fill"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Share <i class="ri-share-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Block <i class="ri-forbid-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Remove <i class="ri-delete-bin-line float-end text-muted"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-grow-1">
-                                            <h5 class="font-size-14 m-0">Paul Haynes</h5>
-                                        </div>
-                
-                                        <div class="dropdown">
-                                            <a href="#" class="text-muted dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="ri-more-2-fill"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Share <i class="ri-share-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Block <i class="ri-forbid-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Remove <i class="ri-delete-bin-line float-end text-muted"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-
-                            </ul>
-                        </div>
-                        <!-- end contact list P -->
-
-                        <div class="mt-3">
-                            <div class="p-3 fw-bold text-primary">
-                                R
-                            </div>
-
-                            <ul class="list-unstyled contact-list">
-                                <li>
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-grow-1">
-                                            <h5 class="font-size-14 m-0">Rocky Jackson</h5>
-                                        </div>
-                
-                                        <div class="dropdown">
-                                            <a href="#" class="text-muted dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="ri-more-2-fill"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Share <i class="ri-share-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Block <i class="ri-forbid-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Remove <i class="ri-delete-bin-line float-end text-muted"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-
-                            </ul>
-                        </div>
-                        <!-- end contact list R -->
-
-                        <div class="mt-3">
-                            <div class="p-3 fw-bold text-primary">
-                                S
-                            </div>
-
-                            <ul class="list-unstyled contact-list">
-                                <li>
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-grow-1">
-                                            <h5 class="font-size-14 m-0">Sara Muller</h5>
-                                        </div>
-                
-                                        <div class="dropdown">
-                                            <a href="#" class="text-muted dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="ri-more-2-fill"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Share <i class="ri-share-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Block <i class="ri-forbid-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Remove <i class="ri-delete-bin-line float-end text-muted"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-grow-1">
-                                            <h5 class="font-size-14 m-0">Simon Velez</h5>
-                                        </div>
-                
-                                        <div class="dropdown">
-                                            <a href="#" class="text-muted dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="ri-more-2-fill"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Share <i class="ri-share-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Block <i class="ri-forbid-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Remove <i class="ri-delete-bin-line float-end text-muted"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-grow-1">
-                                            <h5 class="font-size-14 m-0">Steve Walker</h5>
-                                        </div>
-                
-                                        <div class="dropdown">
-                                            <a href="#" class="text-muted dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="ri-more-2-fill"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Share <i class="ri-share-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Block <i class="ri-forbid-line float-end text-muted"></i></a>
-                                                <a class="dropdown-item" href="#">Remove <i class="ri-delete-bin-line float-end text-muted"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-
-                            </ul>
-                        </div>
+                        
                         <!-- end contact list S -->
                     </div>
                     <!-- end contact lists -->
@@ -1513,7 +953,7 @@
             <!-- End contacts tab-pane -->
             
             <!-- Start settings tab-pane -->
-            <div class="tab-pane" id="pills-setting" role="tabpanel" aria-labelledby="pills-setting-tab">
+            <div class="tab-pane" id="pills-setting" role="tabpanel" aria-labelledby="pills-setting-tab" [class.active]="SelectedMenu==5" [class.show]="SelectedMenu==5" [class.fade]="SelectedMenu==5">
                 <!-- Start Settings content -->
                 <div>
                     <div class="px-4 pt-4">

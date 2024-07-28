@@ -27,6 +27,8 @@
     "@capacitor/haptics": "6.0.0",
     "@capacitor/keyboard": "6.0.1",
     "@capacitor/status-bar": "6.0.0",
+    "@ionic-native/contacts": "^5.36.0",
+    "@ionic-native/core": "^5.36.0",
     "@ionic-native/firebase-x": "^5.36.0",
     "@ionic-native/push": "^5.36.0",
     "@ionic/angular": "^8.0.0",
@@ -55,6 +57,7 @@
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "cordova-android": "^13.0.0",
+    "cordova-plugin-contacts": "^3.0.1",
     "cordova-plugin-device": "2.0.2",
     "cordova-plugin-firebasex": "^16.5.0",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
@@ -112,7 +115,8 @@
         "ANDROID_GSON_VERSION": "2.9.0",
         "ANDROID_FIREBASE_PERF_GRADLE_PLUGIN_VERSION": "1.4.2",
         "ANDROID_GRPC_OKHTTP": "1.46.0"
-      }
+      },
+      "cordova-plugin-contacts": {}
     },
     "platforms": [
       "android"
