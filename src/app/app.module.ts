@@ -16,10 +16,11 @@ import { RegisterComponent } from './register/register.component';
 import { RecoveryComponent } from './recovery/recovery.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts/ngx';
+import { CommunicateComponent } from './communicate/communicate.component';
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, RecoveryComponent, ContactsComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, RecoveryComponent, ContactsComponent, CommunicateComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, NgOtpInputModule, HttpClientModule, CommonModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     FirebaseX,

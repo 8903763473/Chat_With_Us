@@ -11,7 +11,7 @@ export class ApiService {
     constructor(private firebaseX: FirebaseX, private http: HttpClient, private push: Push,
         private platform: Platform) { }
 
-    public baseUrl = "http://192.168.37.171:5000/api";
+    public baseUrl = "http://192.168.31.171:5000/api";
 
 
     Login(data: any) {

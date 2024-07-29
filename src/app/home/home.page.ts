@@ -14,9 +14,11 @@ export class HomePage {
   myContacts: Contact[] = [];
   FirstLetters: { [key: string]: Contact[] } = {};
   InviteUser: boolean = false
+  chatActive: boolean = false
 
   ionViewWillEnter() {
     this.InviteUser = false
+    this.chatActive = false
     this.SelectedMenu = 2;
   }
 
@@ -65,6 +67,10 @@ export class HomePage {
     if (id == 4) {
       this.getContacts();
     }
+  }
+
+  IndividualChat() {
+    this.chatActive = !this.chatActive
   }
 
 }

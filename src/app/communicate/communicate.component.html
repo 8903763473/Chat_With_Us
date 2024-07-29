@@ -1,6 +1,15 @@
-<!-- src/app/components/call/call.component.html -->
-<div>
-  <button (click)="startCall()">Start Call</button>
-  <video #localVideo autoplay muted></video>
-  <video #remoteVideo autoplay></video>
-</div>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Call</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <video #localAudio autoplay muted></video>
+  <video #remoteAudio autoplay></video>
+  
+  <!-- Buttons for initiating and accepting calls -->
+  <ion-button (click)="startCall()">Start Call</ion-button>
+  <ion-button *ngIf="incomingCall" (click)="acceptCall()">Accept Call</ion-button>
+  <ion-button *ngIf="incomingCall" (click)="declineCall()">Decline Call</ion-button>
+</ion-content>
