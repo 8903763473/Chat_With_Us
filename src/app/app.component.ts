@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   userId: any;
-  
+  isLoading: boolean = false;
+
   constructor(public router: Router) {
     if (localStorage.getItem('login') != 'true') {
       this.router.navigate(['/Login']);

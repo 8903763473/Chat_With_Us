@@ -18,11 +18,12 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts/ngx';
 import { CommunicateComponent } from './communicate/communicate.component';
 import { EnterWithCodeComponent } from './enter-with-code/enter-with-code.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, RegisterComponent, RecoveryComponent, ContactsComponent, CommunicateComponent, EnterWithCodeComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, NgOtpInputModule, HttpClientModule, CommonModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, NgOtpInputModule, HttpClientModule, CommonModule, FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     FirebaseX,
     Push,

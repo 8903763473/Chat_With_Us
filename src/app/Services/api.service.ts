@@ -36,4 +36,8 @@ export class ApiService {
         return this.http.post(this.baseUrl + '/auth/inviteMail', data, { responseType: 'text' });
     }
 
+    getAllUsers(data: any) {
+        return this.http.get(this.baseUrl + '/user/getAllUsers/' + data);
+    }
+
 }

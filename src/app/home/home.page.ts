@@ -21,7 +21,34 @@ export class HomePage {
     this.InviteUser = false
     this.chatActive = false
     this.SelectedMenu = 2;
+
+    if (navigator.storage && navigator.storage.estimate) {
+      navigator.storage.estimate().then(estimate => {
+        const used: any = estimate.usage;
+        const total: any = estimate.quota;
+        const free = total - used;
+
+        console.log(`Used storage: ${(used / (1024 * 1024)).toFixed(2)} MB`);
+        console.log(`Total storage: ${(total / (1024 * 1024)).toFixed(2)} MB`);
+        console.log(`Free storage: ${(free / (1024 * 1024)).toFixed(2)} MB`);
+      });
+    } else {
+      console.log('Storage API not supported');
+    }
+    this.getAllUsers();
   }
+
+  getAllUsers() {
+    const UserId = localStorage.getItem('userId');
+    this.api.getAllUsers(UserId).subscribe({
+      next: (res => {
+        console.log(res);
+      }), error: (err => {
+        console.log(err);
+      })
+    })
+  }
+
 
   doLogout(event: any) {
     event.preventDefault();

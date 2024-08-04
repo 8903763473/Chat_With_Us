@@ -18,38 +18,29 @@ export class EnterWithCodeComponent implements OnInit {
 
   constructor(public cryptoService: CryptoService, public app: AppComponent, private alertController: AlertController, public router: Router, public api: ApiService) { }
 
-  // constructor(public router: Router) { }
 
   ngOnInit() {
     console.log(this.router.url.split('/'));
     const SplitPath: any = this.router.url.split('/');
     const IV: any = SplitPath[2];
     const EncryptedData: any = SplitPath[3];
-    // const Key: any = SplitPath[4];
-
     this.DecryptData(IV, EncryptedData)
   }
 
   DecryptData(IV, EncryptedData) {
     const Data: any = this.cryptoService.decrypt(IV, EncryptedData);
-    console.log(JSON.parse(Data));
     this.decryptedData = JSON.parse(Data)
   }
 
   doVerify() {
     const Code: any = document.getElementById('EnterCode')
     this.EnteredCode = Code.value
-
     if (this.decryptedData.code == this.EnteredCode) {
       alert('Verified Successful')
+      this.router.navigate(['/register'])
     } else {
       alert('Verification Failed')
     }
   }
-
-  // onOtpChange(event) {
-  //   const Code: any = document.getElementById('EnterCode')
-  //   this.EnteredCode = Code.value
-  // }
 
 }

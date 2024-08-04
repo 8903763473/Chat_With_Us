@@ -33,17 +33,19 @@ export class LoginComponent implements OnInit {
       "password": Password.value
     }
     if (post.email && post.password) {
+      this.app.isLoading = true
       this.api.Login(post).subscribe({
         next: ((res: any) => {
           console.log(res);
-          localStorage.setItem('login', 'true');
           localStorage.setItem('token', res?.UserData?.token?.Token);
           localStorage.setItem('userId', res?.UserData?.user?._id);
 
           this.onLogin = false;
+          this.app.isLoading = false;
           this.Pushotification.getToken();
         }), error: (err => {
           console.log(err);
+          this.app.isLoading = false;
         })
       })
     }
@@ -51,6 +53,7 @@ export class LoginComponent implements OnInit {
 
   doVerify() {
     if (this.EnteredOTP.length == 4) {
+      this.app.isLoading = true;
       let post = {
         otp: this.EnteredOTP,
         userId: localStorage.getItem('userId')
@@ -58,9 +61,12 @@ export class LoginComponent implements OnInit {
       this.api.verifyOTP(post).subscribe({
         next: (res => {
           console.log(res);
+          this.app.isLoading = false;
+          localStorage.setItem('login', 'true');
           this.presentAlert();
         }), error: (err => {
           console.log(err);
+          this.app.isLoading = false;
         })
       })
     } else {
