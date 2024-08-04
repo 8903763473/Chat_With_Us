@@ -5,6 +5,7 @@ import { RegisterComponent } from './register/register.component';
 import { RecoveryComponent } from './recovery/recovery.component';
 import { CommunicateComponent } from './communicate/communicate.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { EnterWithCodeComponent } from './enter-with-code/enter-with-code.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: 'Contact',
     component: ContactsComponent
+  },
+  {
+    path: 'EnterWithCode/:iv/:enc/:key',
+    component: EnterWithCodeComponent
   },
 ];
 

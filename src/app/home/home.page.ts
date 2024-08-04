@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Contacts, Contact, ContactField, ContactFieldType, ContactFindOptions, ContactName } from '@ionic-native/contacts/ngx';
+import { ApiService } from '../Services/api.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { Contacts, Contact, ContactField, ContactFieldType, ContactFindOptions, 
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  constructor(public router: Router, private contacts: Contacts) { }
+  constructor(public router: Router, private contacts: Contacts, public api: ApiService) { }
 
   SelectedMenu: any;
   myContacts: Contact[] = [];
@@ -61,6 +62,49 @@ export class HomePage {
   inviteUser() {
     this.InviteUser = true;
   }
+
+  InviteUserClose() {
+    this.InviteUser = false;
+  }
+
+  genrateCode(length: number = 8): string {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    const charactersLength = characters.length;
+    for (let i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  }
+
+  async doInvite() {
+    const Email: any = document.getElementById('InviteEmail');
+    const Message: any = document.getElementById('InviteMessage');
+    const Code: any = await this.genrateCode(10);
+    let post = {
+      "email": Email?.value,
+      "message": Message?.value,
+      "redirectLink": "http://localhost:8100/EnterWithCode",
+      "author": {
+        "inviteFrom": localStorage.getItem('userId'),
+        "code": Code
+      }
+    };
+
+    console.log(post);
+
+    this.api.inviteUser(post).subscribe({
+      next: (res => {
+        console.log('Server response:', res);
+        this.InviteUser = false;
+      }),
+      error: (err => {
+        console.log('Error occurred:', err);
+        this.InviteUser = false;
+      })
+    });
+  }
+
 
   onSelectMenu(id: any) {
     this.SelectedMenu = id;
