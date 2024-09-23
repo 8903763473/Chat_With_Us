@@ -12,7 +12,7 @@ export class ApiService {
         private platform: Platform) { }
 
     // public baseUrl = "http://192.168.31.171:5000/api";
-    public baseUrl = "http://localhost:5000/api";
+    public baseUrl = "http://192.168.29.65:5000/api";
 
 
 

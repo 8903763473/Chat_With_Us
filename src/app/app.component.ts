@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from './Services/api.service';
+import { PushNotificationService } from './Services/pushNotification.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,7 @@ export class AppComponent {
   userId: any;
   isLoading: boolean = false;
 
-  constructor(public router: Router) {
+  constructor(public router: Router, public push: PushNotificationService) {
     if (localStorage.getItem('login') != 'true') {
       this.router.navigate(['/Login']);
     }
@@ -18,7 +20,8 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.userId = localStorage.getItem('userId')
+    this.userId = localStorage.getItem('userId');
+    this.push.getToken();
   }
 
   navigate(data: any) {

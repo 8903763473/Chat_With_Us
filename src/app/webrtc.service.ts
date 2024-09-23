@@ -12,7 +12,7 @@ export class WebrtcService {
   public onIncomingCall: (from: string) => void = () => {};
 
   constructor() {
-    this.socket = io('http://192.168.31.171:5000', {
+    this.socket = io('http://192.168.29.65:5000', {
       transports: ['websocket', 'polling'],
     });
 

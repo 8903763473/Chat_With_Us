@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Contacts, Contact, ContactField, ContactFieldType, ContactFindOptions, ContactName } from '@ionic-native/contacts/ngx';
 import { ApiService } from '../Services/api.service';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { ApiService } from '../Services/api.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  constructor(public router: Router, private contacts: Contacts, public api: ApiService) { }
+  constructor(public router: Router, private contacts: Contacts, private app: AppComponent, public api: ApiService) { }
 
   SelectedMenu: any;
   myContacts: Contact[] = [];
@@ -105,6 +106,7 @@ export class HomePage {
   }
 
   async doInvite() {
+    this.app.isLoading = true;
     const Email: any = document.getElementById('InviteEmail');
     const Message: any = document.getElementById('InviteMessage');
     const Code: any = await this.genrateCode(10);
@@ -124,10 +126,12 @@ export class HomePage {
       next: (res => {
         console.log('Server response:', res);
         this.InviteUser = false;
+        this.app.isLoading = false;
       }),
       error: (err => {
         console.log('Error occurred:', err);
         this.InviteUser = false;
+        this.app.isLoading = false;
       })
     });
   }

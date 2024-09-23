@@ -23,8 +23,8 @@ export class RegisterComponent implements OnInit {
   doRegister(event: any) {
     event?.preventDefault();
     const Name: any = document.getElementById('Name');
-    const Email: any = document.getElementById('Email');
-    const Password: any = document.getElementById('Password');
+    const Email: any = document.getElementById('EmailId');
+    const Password: any = document.getElementById('userPassword');
     const Mobile: any = document.getElementById('Mobile');
     const Native: any = document.getElementById('Native');
 
@@ -63,6 +63,9 @@ export class RegisterComponent implements OnInit {
         "theme": "dark"
       }
     }
+
+    console.log(post);
+
 
     this.api.Register(post).subscribe({
       next: (res => {

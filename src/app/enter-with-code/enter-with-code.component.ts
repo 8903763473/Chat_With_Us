@@ -33,14 +33,16 @@ export class EnterWithCodeComponent implements OnInit {
   }
 
   doVerify() {
+    this.app.isLoading = true;
     const Code: any = document.getElementById('EnterCode')
     this.EnteredCode = Code.value
     if (this.decryptedData.code == this.EnteredCode) {
-      alert('Verified Successful')
-      this.router.navigate(['/register'])
+      // alert('Verified Successful')
+      this.router.navigate(['/Register'])
     } else {
       alert('Verification Failed')
     }
+    this.app.isLoading = false;
   }
 
 }

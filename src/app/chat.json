@@ -1,0 +1,54 @@
+ChatAppDB: {
+    32232 : {
+        16-06-2024: {
+            messages: [
+                {
+                    id: 12123,
+                    message:'Hi maa',
+                    file: null,
+                    receiverId:'32232',
+                    senderId:'12332'
+                },
+                {
+                    id: 12124
+                    message:'Hi hlooo',
+                    file: null,
+                    receiverId:'32232',
+                    senderId:'12332'
+                },
+            ]
+        },
+        17-06-2024: {
+            messages: [
+                {
+                    id: 12125,
+                    message:'Mrng  maa',
+                    file: null,
+                    receiverId:'32232',
+                    senderId:'12332'
+                }
+            ]
+        }
+    },
+    32236 : {
+        16-06-2024: {
+            messages: [
+                {
+                    id: 12123,
+                    message:'Hi maa',
+                    file: null,
+                    receiverId:'32232',
+                    senderId:'12332'
+                },
+                {
+                    id: 12124
+                    message:'Hi hlooo',
+                    file: null,
+                    receiverId:'32232',
+                    senderId:'12332'
+                },
+            ]
+        }
+    },
+
+}
